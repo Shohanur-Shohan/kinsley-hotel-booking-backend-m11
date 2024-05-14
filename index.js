@@ -22,6 +22,27 @@ app.use(
 app.use(express.json());
 app.use(cookieParsar());
 
+// api middleware
+const logger = (req, res, next) => {
+  console.log("logger: ", req.url, req.method);
+  next();
+};
+// verify token
+const verifyToken = (req, res, next) => {
+  const token = req?.cookies?.token;
+  // console.log(token, "verify");
+  if (!token) {
+    return res.status(401).send({ message: "Unauthorized" });
+  }
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).send({ message: "Unauthorized" });
+    }
+    req.user = decoded;
+    next();
+  });
+};
+
 //mongodb
 const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASS}@cluster0.kszhklh.mongodb.net`;
 
@@ -80,7 +101,7 @@ async function run() {
 
     //singlepage
     app.get("/room-details/:id", async (req, res) => {
-      console.log("cookie server", req?.cookies);
+      // console.log("cookie server", req?.cookies);
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await allRooms.findOne(query);
