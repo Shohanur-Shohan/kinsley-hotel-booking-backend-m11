@@ -24,8 +24,28 @@ async function run() {
   try {
     // await client.connect();
 
+    const allRooms = client.db("kinsley").collection("all_rooms");
+
     app.get("/", async (req, res) => {
       res.send("success");
+    });
+
+    //sort all rooms by price ascending order
+    app.get("/all-rooms/asc", async (req, res) => {
+      const options = {
+        sort: { price: 1 },
+      };
+      const result = await allRooms.find({}, options).toArray();
+      res.send(result);
+    });
+
+    //sort all rooms by price descending order
+    app.get("/all-rooms/des", async (req, res) => {
+      const options = {
+        sort: { price: -1 },
+      };
+      const result = await allRooms.find({}, options).toArray();
+      res.send(result);
     });
   } catch (error) {
     console.log("Error connecting to MongoDB:", error);
