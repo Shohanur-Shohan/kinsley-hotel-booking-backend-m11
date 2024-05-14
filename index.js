@@ -81,6 +81,13 @@ async function run() {
       res.clearCookie("token", { maxAge: 0 }).send({ success: true });
     });
 
+    //featured rooms
+    app.get("/featured", async (req, res) => {
+      const query = { featured: true };
+      const result = await allRooms.find(query).toArray();
+      res.send(result);
+    });
+
     //sort all rooms by price ascending order
     app.get("/all-rooms/asc", async (req, res) => {
       const options = {
