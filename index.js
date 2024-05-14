@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
+const cookieParsar = require("cookie-parser");
 const port = process.env.PORT || 5000;
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
@@ -8,9 +10,19 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 
 //middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://kinsley-hotel-booking.netlify.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
+app.use(cookieParsar());
 
+//mongodb
 const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASS}@cluster0.kszhklh.mongodb.net`;
 
 const client = new MongoClient(uri, {
@@ -26,8 +38,26 @@ async function run() {
 
     const allRooms = client.db("kinsley").collection("all_rooms");
 
-    app.get("/", async (req, res) => {
-      res.send("success");
+    app.post("/jwt", async (req, res) => {
+      const user = req?.body;
+      const token = jwt.sign(user, process.env.JWT_SECRET, {
+        expiresIn: "24h",
+      });
+      // console.log(user, "from server");
+      res
+        .cookie("token", token, {
+          httpOnly: true,
+          secure: true,
+          sameSite: true,
+        })
+        .send({ success: true });
+    });
+
+    //remove cookies by logout
+    app.post("/logout", async (req, res) => {
+      const user = req?.body;
+      // console.log(user, "from server");
+      res.clearCookie("token", { maxAge: 0 }).send({ success: true });
     });
 
     //sort all rooms by price ascending order
@@ -50,6 +80,7 @@ async function run() {
 
     //singlepage
     app.get("/room-details/:id", async (req, res) => {
+      console.log("cookie server", req?.cookies);
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await allRooms.findOne(query);
