@@ -88,6 +88,12 @@ async function run() {
       res.send(result);
     });
 
+    //sort all rooms by price descending order
+    app.get("/all-rooms", async (req, res) => {
+      const result = await allRooms.find().toArray();
+      res.send(result);
+    });
+
     //sort all rooms by price ascending order
     app.get("/all-rooms/asc", async (req, res) => {
       const options = {
