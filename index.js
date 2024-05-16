@@ -165,6 +165,22 @@ async function run() {
       res.send(result);
     });
 
+    //delete booked_info
+    app.post("/deleteRoomBooking/:roomId", async (req, res) => {
+      const roomId = req.params?.roomId;
+
+      const filter = { _id: new ObjectId(roomId) };
+
+      const updateDoc = {
+        $set: {
+          booked_info: [],
+          status: "available",
+        },
+      };
+      const result = await allRooms.updateOne(filter, updateDoc);
+      res.send(result);
+    });
+
     //user booking list
     app.get("/myRoomBooked/:email", async (req, res) => {
       const userEmail = req?.params.email;
