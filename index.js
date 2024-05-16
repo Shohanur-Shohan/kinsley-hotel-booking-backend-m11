@@ -121,6 +121,28 @@ async function run() {
       // console.log(result);
       res.send(result);
     });
+
+    //book a room
+    app.post("/roomBooking/:id", async (req, res) => {
+      const roomData = req?.body;
+      const id = req.params.id;
+      console.log("id", id, "data", roomData);
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+
+      const updateDoc = {
+        $push: {
+          booked_info: roomData,
+        },
+        $set: {
+          status: "unavailable",
+        },
+      };
+      const result = await allRooms.updateOne(filter, updateDoc, options);
+      console.log(result);
+      res.send(result);
+      // console.log(user, "from server");
+    });
   } catch (error) {
     console.log("Error connecting to MongoDB:", error);
   }
