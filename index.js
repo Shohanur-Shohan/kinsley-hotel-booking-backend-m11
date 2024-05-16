@@ -126,7 +126,7 @@ async function run() {
     app.post("/roomBooking/:id", async (req, res) => {
       const roomData = req?.body;
       const id = req.params.id;
-      console.log("id", id, "data", roomData);
+      // console.log("id", id, "data", roomData);
       const filter = { _id: new ObjectId(id) };
       const options = { upsert: true };
 
@@ -139,9 +139,41 @@ async function run() {
         },
       };
       const result = await allRooms.updateOne(filter, updateDoc, options);
-      console.log(result);
+      // console.log(result);
       res.send(result);
       // console.log(user, "from server");
+    });
+
+    //update a room
+    app.patch("/updateRoomBooking/:id", async (req, res) => {
+      const { start_date, end_date } = req.body?.date_info;
+      const id = req.params.id;
+
+      const result = await allRooms.updateOne(
+        {
+          _id: new ObjectId(id),
+          "booked_info.booking_id": id,
+        },
+        {
+          $set: {
+            "booked_info.$.date_info.start_date": start_date,
+            "booked_info.$.date_info.end_date": end_date,
+          },
+        }
+      );
+
+      res.send(result);
+    });
+
+    //user booking list
+    app.get("/myRoomBooked/:email", async (req, res) => {
+      const userEmail = req?.params.email;
+
+      const query = {
+        "booked_info.user_info.email": `${userEmail}`,
+      };
+      const result = await allRooms.find(query).toArray();
+      res.send(result);
     });
   } catch (error) {
     console.log("Error connecting to MongoDB:", error);
