@@ -124,7 +124,8 @@ async function run() {
 
     //book a room
     app.post("/roomBooking/:id", async (req, res) => {
-      const roomData = req?.body;
+      const bookData = req?.body;
+      // console.log(bookData?.user_info?.email);
       const id = req.params.id;
       // console.log("id", id, "data", roomData);
       const filter = { _id: new ObjectId(id) };
@@ -132,7 +133,8 @@ async function run() {
 
       const updateDoc = {
         $push: {
-          booked_info: roomData,
+          booked_info: bookData,
+          customers: bookData?.user_info?.email,
         },
         $set: {
           status: "unavailable",
@@ -189,6 +191,21 @@ async function run() {
         "booked_info.user_info.email": `${userEmail}`,
       };
       const result = await allRooms.find(query).toArray();
+      res.send(result);
+    });
+
+    app.post("/giveReview/:roomId", async (req, res) => {
+      const roomId = req.params?.roomId;
+      // console.log((roomId, req?.body));
+      const reviewData = req?.body;
+      const filter = { _id: new ObjectId(roomId) };
+
+      const updateDoc = {
+        $push: {
+          reviews: reviewData,
+        },
+      };
+      const result = await allRooms.updateOne(filter, updateDoc);
       res.send(result);
     });
   } catch (error) {
