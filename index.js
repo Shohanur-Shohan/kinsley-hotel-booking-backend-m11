@@ -150,12 +150,20 @@ async function run() {
     //update a room
     app.patch("/updateRoomBooking/:id", async (req, res) => {
       const { start_date, end_date } = req.body?.date_info;
-      const id = req.params.id;
+      const bookingId = req.params.id;
+
+      const room = await allRooms.findOne({
+        "booked_info.booking_id": bookingId,
+      });
+
+      if (!room) {
+        return res.status(404).send({ message: "Room or booking not found" });
+      }
 
       const result = await allRooms.updateOne(
         {
-          _id: new ObjectId(id),
-          "booked_info.booking_id": id,
+          _id: room._id,
+          "booked_info.booking_id": bookingId,
         },
         {
           $set: {
