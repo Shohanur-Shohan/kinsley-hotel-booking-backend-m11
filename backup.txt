@@ -1,0 +1,344 @@
+[{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee150"
+  },
+  "room_name": "Deluxe Ocean View Suite",
+  "image": "https://img.freepik.com/free-photo/luxury-bedroom-hotel_1150-10836.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/luxury-bedroom-hotel_1150-10836.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Spacious suite with stunning ocean views and luxurious amenities.",
+  "room_info": {
+    "adults": "2",
+    "size": "1200 sq ft"
+  },
+  "price": "350",
+  "featured": true,
+  "status": "available",
+  "reviews": [
+    {
+      "user_email": "shohan@gmail.com",
+      "review": {
+        "userName": "shohan",
+        "user_email": "shohan@gmail.com",
+        "message": "hhhhhhhhhhh",
+        "rating": "5",
+        "review_date": "17 May 2024"
+      }
+    },
+    {
+      "user_email": "shohan@gmail.com",
+      "review": {
+        "userName": "shohan",
+        "user_email": "shohan@gmail.com",
+        "message": "hhhhhhhhhhh",
+        "rating": "5",
+        "review_date": "17 May 2024"
+      }
+    },
+    {
+      "user_email": "shohan@gmail.com",
+      "review": {
+        "userName": "shohan",
+        "user_email": "shohan@gmail.com",
+        "message": "Service is Good ",
+        "rating": "5",
+        "review_date": "17 May 2024"
+      }
+    },
+    {
+      "user_email": "shohan@gmail.com",
+      "review": {
+        "userName": "shohan",
+        "user_email": "shohan@gmail.com",
+        "message": "Service is Bad",
+        "rating": "4",
+        "review_date": "17 May 2024"
+      }
+    }
+  ],
+  "booked_info": [],
+  "customers": [
+    "srshohanur734@gmail.com",
+    "shohan@gmail.com"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee152"
+  },
+  "room_name": "Standard Double Room",
+  "image": "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Comfortable double room suitable for couples or solo travelers.",
+  "room_info": {
+    "adults": "2",
+    "size": "300 sq ft"
+  },
+  "price": "120",
+  "featured": true,
+  "status": "unavailable",
+  "reviews": [
+    {
+      "user_email": "shohan@gmail.com",
+      "review": {
+        "userName": "shohan",
+        "user_email": "shohan@gmail.com",
+        "message": "Service is good",
+        "rating": "5",
+        "review_date": "17 May 2024"
+      }
+    }
+  ],
+  "booked_info": [
+    {
+      "booking_id": "6642b332c710f45e20eee152",
+      "date_info": {
+        "start_date": "17 May 2024",
+        "end_date": "17 May 2024"
+      },
+      "room_information": {
+        "room_id": "6642b332c710f45e20eee152",
+        "room_image": "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+        "room_name": "Standard Double Room",
+        "room_status": "available"
+      },
+      "user_info": {
+        "name": "shohanur shohan",
+        "email": "shohan@gmail.com",
+        "photo": null
+      }
+    }
+  ],
+  "customers": [
+    "shohan@gmail.com",
+    "shohan@gmail.com",
+    "shohan@gmail.com"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee151"
+  },
+  "room_name": "Luxury Villa with Private Pool",
+  "image": "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Exclusive villa featuring a private pool and scenic garden.",
+  "room_info": {
+    "adults": "4",
+    "size": "1800 sq ft"
+  },
+  "price": "600",
+  "featured": true,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee153"
+  },
+  "room_name": "Executive Suite",
+  "image": "https://img.freepik.com/free-photo/3d-rendering-luxury-bedroom-suite-resort-hotel-with-twin-bed-living_105762-2018.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/3d-rendering-luxury-bedroom-suite-resort-hotel-with-twin-bed-living_105762-2018.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Modern suite with city skyline views and workspace.",
+  "room_info": {
+    "adults": "2",
+    "size": "800 sq ft"
+  },
+  "price": "250",
+  "featured": true,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee159"
+  },
+  "room_name": "Classic Twin Room",
+  "image": "https://img.freepik.com/free-photo/nice-lit-lamp-table_1203-546.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/nice-lit-lamp-table_1203-546.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Traditional twin room with comfortable bedding.",
+  "room_info": {
+    "adults": "2",
+    "size": "250 sq ft"
+  },
+  "price": "150",
+  "featured": true,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee154"
+  },
+  "room_name": "Family Bungalow",
+  "image": "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Spacious bungalow perfect for family vacations.",
+  "room_info": {
+    "adults": "4",
+    "children": "2",
+    "size": "1500 sq ft"
+  },
+  "price": "400",
+  "featured": false,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee155"
+  },
+  "room_name": "Luxury Penthouse",
+  "image": "https://img.freepik.com/free-photo/spacious-room-with-big-window_1203-1490.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/3d-rendering-beautiful-luxury-dark-wood-european-classic-bedroom-suite-hotel_105762-2164.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Opulent penthouse with panoramic views and private terrace.",
+  "room_info": {
+    "adults": "4",
+    "size": "2000 sq ft"
+  },
+  "price": "800",
+  "featured": true,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee158"
+  },
+  "room_name": "Family Suite with Ocean View",
+  "image": "https://img.freepik.com/free-photo/hotel-bedroom-with-double-bed-table-tv-set_1262-3034.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/hotel-bedroom-with-double-bed-table-tv-set_1262-3034.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Spacious suite ideal for families, offering stunning ocean views.",
+  "room_info": {
+    "adults": "4",
+    "children": "2",
+    "size": "1600 sq ft"
+  },
+  "price": "450",
+  "featured": false,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee15b"
+  },
+  "room_name": "Charming Cottage Retreat",
+  "image": "https://img.freepik.com/free-photo/pillow-bed_74190-2140.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/pillow-bed_74190-2140.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Escape to a cozy cottage surrounded by nature.",
+  "room_info": {
+    "adults": "3",
+    "size": "1200 sq ft"
+  },
+  "price": "250",
+  "featured": false,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee157"
+  },
+  "room_name": "Executive King Suite",
+  "image": "https://img.freepik.com/free-photo/3d-rendering-beautiful-luxury-bedroom-suite-hotel-with-tv-working-table_105762-2022.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/3d-rendering-beautiful-luxury-bedroom-suite-hotel-with-tv-working-table_105762-2022.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Spacious suite with a king-size bed and modern amenities.",
+  "room_info": {
+    "adults": "2",
+    "size": "1000 sq ft"
+  },
+  "price": "300",
+  "featured": true,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+},
+{
+  "_id": {
+    "$oid": "6642b332c710f45e20eee15a"
+  },
+  "room_name": "Luxury Spa Suite",
+  "image": "https://img.freepik.com/free-photo/comfortable-pillow-bed_74190-6274.jpg",
+  "images": [
+    "https://img.freepik.com/free-photo/comfortable-pillow-bed_74190-6274.jpg",
+    "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg",
+    "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg",
+    "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1823.jpg"
+  ],
+  "description": "Indulge in a spa-inspired suite with relaxation amenities.",
+  "room_info": {
+    "adults": "2",
+    "size": "800 sq ft"
+  },
+  "price": "400",
+  "featured": true,
+  "status": "available",
+  "reviews": [],
+  "booked_info": [],
+  "customers": []
+}]

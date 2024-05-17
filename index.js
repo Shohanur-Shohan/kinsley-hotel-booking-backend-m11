@@ -13,7 +13,7 @@ require("dotenv").config();
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
+      // "http://localhost:5173",
       "https://kinsley-hotel-booking.netlify.app",
     ],
     credentials: true,
@@ -24,7 +24,7 @@ app.use(cookieParsar());
 
 // api middleware
 const logger = (req, res, next) => {
-  console.log("logger: ", req.url, req.method);
+  // console.log("logger: ", req.url, req.method);
   next();
 };
 // verify token
@@ -38,7 +38,7 @@ const verifyToken = (req, res, next) => {
     if (err) {
       return res.status(401).send({ message: "Unauthorized" });
     }
-    req.user = decoded;
+    req.decodedUser = decoded;
     next();
   });
 };
@@ -53,6 +53,7 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
+
 async function run() {
   try {
     // await client.connect();
@@ -185,13 +186,18 @@ async function run() {
 
     //user booking list
     app.get("/myRoomBooked/:email", async (req, res) => {
-      const userEmail = req?.params.email;
-
+      const userEmail = req.params?.email;
+      // const decodedEmail = await req.decodedUser?.email;
+      // console.log(userEmail, decodedEmail);
+      // if (userEmail !== decodedEmail) {
+      //   res.status(403).send({ message: "Forbidden Access" });
+      // } else {
       const query = {
         "booked_info.user_info.email": `${userEmail}`,
       };
       const result = await allRooms.find(query).toArray();
       res.send(result);
+      // }
     });
 
     app.post("/giveReview/:roomId", async (req, res) => {
