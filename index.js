@@ -54,6 +54,12 @@ const client = new MongoClient(uri, {
   },
 });
 
+const cookieOption = {
+  httpOnly: true,
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+  secure: process.env.NODE_ENV === "production" ? true : false,
+};
+
 async function run() {
   try {
     // await client.connect();
@@ -66,20 +72,16 @@ async function run() {
         expiresIn: "24h",
       });
       // console.log(user, "from server");
-      res
-        .cookie("token", token, {
-          httpOnly: true,
-          secure: true,
-          sameSite: true,
-        })
-        .send({ success: true });
+      res.cookie("token", token, cookieOption).send({ success: true });
     });
 
     //remove cookies by logout
     app.post("/logout", async (req, res) => {
       const user = req?.body;
       // console.log(user, "from server");
-      res.clearCookie("token", { maxAge: 0 }).send({ success: true });
+      res
+        .clearCookie("token", { ...cookieOption, maxAge: 0 })
+        .send({ success: true });
     });
 
     //featured rooms
@@ -223,11 +225,11 @@ async function run() {
       res.send(result);
     });
   } catch (error) {
-    console.log("Error connecting to MongoDB:", error);
+    // console.log("Error connecting to MongoDB:", error);
   }
 }
 run();
 
 app.listen(port, () => {
-  console.log(`app is listening, ${port}`);
+  // console.log(`app is listening, ${port}`);
 });
